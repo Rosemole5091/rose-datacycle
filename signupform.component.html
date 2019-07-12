@@ -1,0 +1,85 @@
+<form >
+   
+    <div class="form-group">
+        <label for="Firstname">FIRST NAME</label>
+         <input required 
+         [(ngModel)]="firstName"
+         name="Firstname" 
+         type="text" 
+         placeholder="Enter First Name"
+         class="form-control">  
+         &nbsp;&nbsp;
+  
+        <label for="Lastname">LAST NAME</label>
+        <input required 
+        [(ngModel)]="lastName"
+        name="Lastname"
+        type="text" 
+        placeholder="Enter Last Name" 
+        class="form-control"><br><br>
+    </div>
+
+
+    <div class="form-group">
+        <label for="Address">ADDRESS</label>
+        <input required 
+        [(ngModel)]="address" 
+        name="Address"
+        type="text" 
+        placeholder="Enter address" 
+        class="form-control" >
+
+    </div><br>
+        
+    
+    <div class="form-group">
+        <label for="Contact">CONTACT NUMBER</label>
+        <input required
+        [(ngModel)]="contact"
+        name="Contact"  
+        maxlength="10" type="text" placeholder="Enter contact"
+        class="form-control" >
+        &nbsp;&nbsp;
+        <p name="p01"></p>
+             
+        <label for="Email">EMAIL</label>
+        <input required 
+        [(ngModel)]="email"
+        name="Email"
+        type="text" 
+        placeholder="Enter Email"
+        class="form-control" >
+         
+    </div><br><br>
+
+    <div>
+    <button type="submit" onclick="addUser()">SIGNUP</button>&nbsp;&nbsp;
+
+    <button class="clr-btn" onclick="this.form.reset();">CLEAR</button>&nbsp;&nbsp;
+    
+    <button>LIST USERS</button> &nbsp;&nbsp;
+    
+    <table>
+        <thead>
+        <th>FIRST NAME</th>
+        <th>LAST NAME</th>
+        <th>ADDRESS</th>
+        <th>CONTACT NUMBER</th>
+        <th>EMAIL</th>
+        </thead>
+
+        <tbody>
+        <tr *ngFor="let users of userList">
+        <td>{{users.firstName}}</td>
+        <td>{{users.lastName}}</td>
+        <td>{{users.address}}</td>
+        <td>{{users.contact}}</td>
+        <td>{{users.email}}</td>
+        </tr>
+        </tbody>
+
+ </table>
+    </div>
+
+</form>
+
